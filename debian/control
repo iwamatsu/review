@@ -9,7 +9,7 @@ Vcs-Git: https://github.com/kmuto/review.git
 
 Package: review
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, ruby
+Depends: ${shlibs:Depends}, ${misc:Depends}, ruby, ruby-rouge, ruby-zip
 Recommends: zip
 Suggests: ptex-bin, okumura-clsfiles, libmathml-ruby
 Description: easy-to-use digital publishing system for Japanese books and ebooks
