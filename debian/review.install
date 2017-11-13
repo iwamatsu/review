@@ -6,8 +6,10 @@ bin/review-index	usr/bin
 bin/review-pdfmaker	usr/bin
 bin/review-preproc	usr/bin
 bin/review-validate	usr/bin
-bin/review-vol	usr/bin
+bin/review-vol		usr/bin
+lib/epubmaker		usr/share/review
+lib/epubmaker.rb	usr/share/review
 lib/lineinput.rb	usr/share/review
-lib/review.rb	usr/share/review
-lib/uuid.rb	usr/share/review
-lib/review	usr/share/review
+lib/review		usr/share/review
+lib/review.rb		usr/share/review
+templates 		usr/share/review
