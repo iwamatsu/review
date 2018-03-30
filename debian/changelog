@@ -1,3 +1,9 @@
+review (2.5.0) UNRELEASED; urgency=medium
+
+  * Update to 2.5.0
+
+ -- Nobuhiro Iwamatsu <iwamatsu@debian.org>  Fri, 30 Mar 2018 15:23:53 +0900
+
 review (2.3.0) UNRELEASED; urgency=medium
 
   * Initial Release.
