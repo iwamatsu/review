@@ -11,7 +11,7 @@ Package: review
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, ruby, ruby-rouge, ruby-zip
 Recommends: zip
-Suggests: texlive-latex-extra, texlive-latex-recommended, okumura-clsfiles, libmathml-ruby
+Suggests: texlive-latex-extra, texlive-latex-recommended, lmodern, okumura-clsfiles, libmathml-ruby
 Description: easy-to-use digital publishing system for Japanese books and ebooks
  Re:VIEW is a digital publishing system for books and ebooks.
  It is aimed professional Japanese editorial use.
