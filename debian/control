@@ -1,7 +1,7 @@
 Source: review
 Section: text
 Priority: optional
-Maintainer: Kenshi Muto <kmuto@debian.org>
+Maintainer: Kenshi Muto <kmuto@debian.org>, Nobuhiro Iwamatsu <iwamatsu@debian.org>
 Build-Depends: debhelper (>= 9), quilt (>= 0.46-7~)
 Standards-Version: 3.9.1
 Homepage: http://github.com/kmuto/review
