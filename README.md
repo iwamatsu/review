@@ -6,7 +6,9 @@
 
 Re:VIEW is an easy-to-use digital publishing system for paper books and ebooks.
 
-## Supported Format
+## Supported Formats
+
+![supported formats](./doc/images/review-generate.png)
 
 Output formats Re:VIEW supports are:
 
@@ -55,10 +57,10 @@ $ review-init hello
 $ cd hello
 $ (... add and edit *.re file, config.yml and catalog.yml ...)
 $ rake epub  ## generating EPUB
-$ rake pdf   ## generating PDF
+$ rake pdf   ## generating PDF(Requirement TeX)
 ```
 
-For further information, see [doc/quickstart.md](https://github.com/kmuto/review/blob/readme-md/doc/quickstart.md)
+For further information, see [doc/quickstart.md](https://github.com/kmuto/review/blob/master/doc/quickstart.md)
 
 ## Resources
 
@@ -97,4 +99,4 @@ LGPL. See [COPYING](https://github.com/kmuto/review/blob/master/COPYING) file.
 
 ## Copyright
 
-Copyright (c) 2006-2017 Minero Aoki, Kenshi Muto, Masayoshi Takahashi, Masanori Kado.
+Copyright (c) 2006-2018 Minero Aoki, Kenshi Muto, Masayoshi Takahashi, Masanori Kado.
