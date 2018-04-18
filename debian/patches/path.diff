@@ -1,8 +1,44 @@
+From ade50288a4298afb7af060297c1897a5c8840751 Mon Sep 17 00:00:00 2001
+From: Nobuhiro Iwamatsu <iwamatsu@nigauri.org>
+Date: Wed, 18 Apr 2018 09:56:36 +0900
+Subject: [PATCH] Fix path
+
+Signed-off-by: Nobuhiro Iwamatsu <iwamatsu@nigauri.org>
+---
+ bin/review                   | 2 +-
+ bin/review-catalog-converter | 2 +-
+ bin/review-check             | 2 +-
+ bin/review-checkdep          | 2 +-
+ bin/review-compile           | 2 +-
+ bin/review-epubmaker         | 2 +-
+ bin/review-index             | 2 +-
+ bin/review-init              | 2 +-
+ bin/review-pdfmaker          | 2 +-
+ bin/review-preproc           | 2 +-
+ bin/review-textmaker         | 2 +-
+ bin/review-validate          | 2 +-
+ bin/review-vol               | 2 +-
+ bin/review-webmaker          | 2 +-
+ 14 files changed, 14 insertions(+), 14 deletions(-)
+
+diff --git a/bin/review b/bin/review
+index 7b7ed4a..6cb9e29 100755
+--- a/bin/review
++++ b/bin/review
+@@ -15,7 +15,7 @@
+ 
+ require 'pathname'
+ bindir = Pathname.new(__FILE__).realpath.dirname
+-$LOAD_PATH.unshift((bindir + '../lib').realpath)
++$LOAD_PATH.unshift("/usr/share/review")
+ 
+ require 'review'
+ 
 diff --git a/bin/review-catalog-converter b/bin/review-catalog-converter
-index ce4bc65..2715569 100755
+index 0b6a94a..fcf8ed0 100755
 --- a/bin/review-catalog-converter
 +++ b/bin/review-catalog-converter
-@@ -13,7 +13,7 @@
+@@ -12,7 +12,7 @@
  require 'pathname'
  require 'optparse'
  bindir = Pathname.new(__FILE__).realpath.dirname
@@ -10,12 +46,12 @@ index ce4bc65..2715569 100755
 +$LOAD_PATH.unshift("/usr/share/review")
  require 'review/version'
  require 'review/extentions'
- 
+ require 'review/logger'
 diff --git a/bin/review-check b/bin/review-check
-index d5a61ee..45592e7 100755
+index 6b7cbca..56fd604 100755
 --- a/bin/review-check
 +++ b/bin/review-check
-@@ -13,7 +13,7 @@
+@@ -12,7 +12,7 @@
  require 'pathname'
  
  bindir = Pathname.new(__FILE__).realpath.dirname
@@ -25,23 +61,23 @@ index d5a61ee..45592e7 100755
  require 'review'
  require 'optparse'
 diff --git a/bin/review-checkdep b/bin/review-checkdep
-index d15246d..24c6137 100755
+index 533a9a4..45b38a5 100755
 --- a/bin/review-checkdep
 +++ b/bin/review-checkdep
-@@ -13,7 +13,7 @@
+@@ -12,7 +12,7 @@
  require 'pathname'
  
  bindir = Pathname.new(__FILE__).realpath.dirname
 -$LOAD_PATH.unshift((bindir + '../lib').realpath)
 +$LOAD_PATH.unshift("/usr/share/review")
  
- PREDEF_FILE = 'PREDEF'
+ PREDEF_FILE = 'PREDEF'.freeze
  
 diff --git a/bin/review-compile b/bin/review-compile
-index 547907f..60d3022 100755
+index 5fcc77d..78909c2 100755
 --- a/bin/review-compile
 +++ b/bin/review-compile
-@@ -14,7 +14,7 @@
+@@ -12,7 +12,7 @@
  require 'pathname'
  
  bindir = Pathname.new(__FILE__).realpath.dirname
@@ -51,10 +87,10 @@ index 547907f..60d3022 100755
  require 'review'
  require 'fileutils'
 diff --git a/bin/review-epubmaker b/bin/review-epubmaker
-index fe97e0a..cbc07ce 100755
+index 7f58480..06d474a 100755
 --- a/bin/review-epubmaker
 +++ b/bin/review-epubmaker
-@@ -11,7 +11,7 @@
+@@ -9,7 +9,7 @@
  require 'pathname'
  require 'optparse'
  bindir = Pathname.new(__FILE__).realpath.dirname
@@ -64,10 +100,10 @@ index fe97e0a..cbc07ce 100755
  require 'review/version'
  
 diff --git a/bin/review-index b/bin/review-index
-index 014d12b..acad453 100755
+index b0b744a..94d599e 100755
 --- a/bin/review-index
 +++ b/bin/review-index
-@@ -13,7 +13,7 @@
+@@ -12,7 +12,7 @@
  require 'pathname'
  
  bindir = Pathname.new(__FILE__).realpath.dirname
@@ -77,7 +113,7 @@ index 014d12b..acad453 100755
  require 'review/book'
  require 'review/tocparser'
 diff --git a/bin/review-init b/bin/review-init
-index e88e769..bfd8f0c 100755
+index 17951da..99b87e4 100755
 --- a/bin/review-init
 +++ b/bin/review-init
 @@ -13,7 +13,7 @@ require 'optparse'
@@ -87,13 +123,13 @@ index e88e769..bfd8f0c 100755
 -$LOAD_PATH.unshift((bindir + '../lib').realpath)
 +$LOAD_PATH.unshift("/usr/share/review")
  
- require 'review/version'
+ require 'review'
  
 diff --git a/bin/review-pdfmaker b/bin/review-pdfmaker
-index ef7ae57..bafa9ba 100755
+index 353500a..4df17c7 100755
 --- a/bin/review-pdfmaker
 +++ b/bin/review-pdfmaker
-@@ -11,7 +11,7 @@
+@@ -9,7 +9,7 @@
  
  require 'pathname'
  bindir = Pathname.new(__FILE__).realpath.dirname
@@ -103,10 +139,10 @@ index ef7ae57..bafa9ba 100755
  require 'review/pdfmaker'
  
 diff --git a/bin/review-preproc b/bin/review-preproc
-index 7546da9..cb6fae3 100755
+index 8e721db..7a10443 100755
 --- a/bin/review-preproc
 +++ b/bin/review-preproc
-@@ -14,7 +14,7 @@
+@@ -12,7 +12,7 @@
  require 'pathname'
  
  bindir = Pathname.new(__FILE__).realpath.dirname
@@ -115,11 +151,37 @@ index 7546da9..cb6fae3 100755
  
  require 'review/preprocessor'
  require 'review/unfold'
+diff --git a/bin/review-textmaker b/bin/review-textmaker
+index 609836d..a9a7353 100755
+--- a/bin/review-textmaker
++++ b/bin/review-textmaker
+@@ -9,7 +9,7 @@
+ 
+ require 'pathname'
+ bindir = Pathname.new(__FILE__).realpath.dirname
+-$LOAD_PATH.unshift((bindir + '../lib').realpath)
++$LOAD_PATH.unshift("/usr/share/review")
+ 
+ require 'review/textmaker'
+ 
+diff --git a/bin/review-validate b/bin/review-validate
+index a922900..9b72e6b 100755
+--- a/bin/review-validate
++++ b/bin/review-validate
+@@ -11,7 +11,7 @@
+ require 'pathname'
+ 
+ bindir = Pathname.new(__FILE__).realpath.dirname
+-$LOAD_PATH.unshift((bindir + '../lib').realpath)
++$LOAD_PATH.unshift("/usr/share/review")
+ require 'review/logger'
+ 
+ block = nil
 diff --git a/bin/review-vol b/bin/review-vol
-index f7ad145..37f229b 100755
+index 1844b13..7a5583e 100755
 --- a/bin/review-vol
 +++ b/bin/review-vol
-@@ -13,7 +13,7 @@
+@@ -12,7 +12,7 @@
  require 'pathname'
  
  bindir = Pathname.new(__FILE__).realpath.dirname
@@ -142,18 +204,5 @@ index 18d9f38..4671452 100755
  require 'review/webmaker'
  
 -- 
-2.15.0
+2.16.2
 
-diff --git a/lib/review/template.rb b/lib/review/template.rb
-index f311c74..9fb8600 100644
---- a/lib/review/template.rb
-+++ b/lib/review/template.rb
-@@ -4,7 +4,7 @@ module ReVIEW
-   class Template
-     include ERB::Util
- 
--    TEMPLATE_DIR = File.join(File.dirname(__FILE__), "../../templates")
-+    TEMPLATE_DIR = File.join(File.dirname(__FILE__), "../templates")
- 
-     def self.load(filename, mode = 1)
-       self.new(filename, mode)
